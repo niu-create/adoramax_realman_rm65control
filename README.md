@@ -1,0 +1,1 @@
+# adoramax_realman_rm65control
