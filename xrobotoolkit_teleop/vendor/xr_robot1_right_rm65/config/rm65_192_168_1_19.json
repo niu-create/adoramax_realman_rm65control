@@ -1,0 +1,82 @@
+{
+  "schema_version": 2,
+  "arm": {
+    "ip": "192.168.1.19",
+    "port": 8080,
+    "work_frame": {
+      "name": "416table",
+      "pose_in_base_m_rad": [-0.459609, 0.075939, -0.308637, 0.014, -0.066, 3.113]
+    },
+    "tool_frame": {
+      "name": "leboripper",
+      "pose_from_flange_m_rad": [0.007157, -0.004459, 0.201280, 0.010, 0.000, 3.105]
+    }
+  },
+  "xr": {
+    "controller": "right_controller",
+    "grip": "right_grip",
+    "trigger": "right_trigger"
+  },
+  "calibration": {
+    "rotation_xr_to_rm65_base": [
+      [0.0470842996783453, 0.0964724219214612, 0.9942213740070206],
+      [0.9981982214855796, 0.0325168142067027, -0.0504278436666913],
+      [-0.0371938079097217, 0.9948043670000926, -0.0947675685597155]
+    ],
+    "rms_angular_error_deg": 1.2503465954534652,
+    "translation_mode": "relative_at_grip",
+    "rotation_416table_from_operator_axes": [
+      [-1.0, 0.0, 0.0],
+      [0.0, -1.0, 0.0],
+      [0.0, 0.0, 1.0]
+    ],
+    "translation_xr_axis_signs": [1.0, 1.0, 1.0],
+    "operator_axis_source": "2026-08-05 ruler captures plus formal live verification: operator X/Y require a 180 deg correction about 416table Z; Z is unchanged"
+  },
+  "control": {
+    "position_scale": 1.0,
+    "teleop_position_gain": 1.0,
+    "rate_hz": 90.0,
+    "max_joint_speed_deg_s": 180.0,
+    "motion_start_threshold_m": 0.003
+  },
+  "auxiliary_controls": {
+    "home_enabled": true,
+    "home_button_hold_s": 1.0,
+    "home_speed_percent": 10,
+    "home_timeout_s": 30.0,
+    "wrist_joint_control_enabled": true,
+    "wrist_trigger_threshold": 0.9,
+    "wrist_rotation_deadband_deg": 1.0,
+    "wrist_max_rotation_step_deg": 30.0,
+    "wrist_scale_factor": 1.5,
+    "wrist_max_speed_deg_s": 180.0,
+    "wrist_max_target_lag_deg": 15.0,
+    "j5_controller_axis": 0,
+    "j5_controller_sign": -1.0,
+    "j6_controller_axis": 2,
+    "j6_controller_sign": 1.0
+  },
+  "gripper": {
+    "enabled": true,
+    "required": false,
+    "protocol": "ag",
+    "device_id": 1,
+    "force_percent": 30,
+    "tool_voltage": 0,
+    "modbus_timeout_units": 2,
+    "initialization_timeout_s": 8.0,
+    "button_debounce_s": 0.3
+  },
+  "safety": {
+    "xr_stale_timeout_s": 0.2,
+    "max_xr_sample_step_m": 0.10,
+    "joint_lower_deg": [-177.96069117, -129.99839414, -134.98885653, -177.96069117, -127.99877143, -359.81749534],
+    "joint_upper_deg": [177.96069117, 129.99839414, 134.98885653, 177.96069117, 127.99877143, 359.81749534],
+    "joint_limit_margin_deg": 5.0,
+    "frame_position_tolerance_m": 0.001,
+    "frame_rotation_tolerance_deg": 0.5,
+    "collision_level": 4,
+    "enable_self_collision": true
+  }
+}

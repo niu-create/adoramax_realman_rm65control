@@ -1,0 +1,101 @@
+{
+  "schema_version": 2,
+  "arm": {
+    "ip": "192.168.1.18",
+    "port": 8080,
+    "normalize_sdk_frames": true,
+    "work_frame": {
+      "name": "416table",
+      "pose_in_base_m_rad": [-0.267549, -0.457016, -0.303284, -0.012, -0.116, -1.502]
+    },
+    "tool_frame": {
+      "name": "leboripper",
+      "pose_from_flange_m_rad": [-0.003123, 0.007847, 0.185112, 0.015, -0.132, 2.953]
+    }
+  },
+  "xr": {
+    "controller": "left_controller",
+    "grip": "left_grip",
+    "trigger": "left_trigger"
+  },
+  "calibration": {
+    "rotation_xr_to_rm65_base": [
+      [-0.9987177853477316, -0.0192375641608263, -0.0468262891470156],
+      [-0.049116673217148, 0.1441891923821646, 0.9883304251171565],
+      [-0.0122612251509263, 0.9893631249067946, -0.1449491960393746]
+    ],
+    "rms_angular_error_deg": 1.2503465954534652,
+    "translation_mode": "relative_at_grip",
+    "rotation_416table_from_operator_axes": [
+      [0.0, 0.0, -1.0],
+      [0.0, 1.0, 0.0],
+      [1.0, 0.0, 0.0]
+    ],
+    "translation_xr_axis_signs": [1.0, 1.0, 1.0],
+    "operator_axis_source": "2026-09-10 operator-requested left-arm mapping: swap fore/aft and vertical effects, and reverse lateral direction; fore/aft -> work +Z, lateral -> work +Y, vertical -> work -X"
+  },
+  "control": {
+    "position_scale": 1.0,
+    "teleop_position_gain": 1.0,
+    "rate_hz": 90.0,
+    "max_joint_speed_deg_s": 180.0,
+    "max_target_position_lag_m": 0.0,
+    "feedback_anchored_rate_limit": false,
+    "cartesian_path_rate_limit": false,
+    "position_priority_ik": false,
+    "position_follow_ik": false,
+    "verify_ik_residual": true,
+    "reject_delayed_xr": true,
+    "translation_axis_deadband_m": 0.0,
+    "grasp_lift_assist_enabled": false,
+    "grasp_lift_elbow_trigger_deg": 10.0,
+    "grasp_lift_elbow_release_deg": 20.0,
+    "grasp_lift_retract_m": 0.05,
+    "grasp_lift_activation_m": 0.01,
+    "shoulder_swing_enabled": false,
+    "shoulder_swing_activation_m": 0.01,
+    "shoulder_swing_elbow_max_deg": 10.0,
+    "shoulder_swing_scale_deg_per_m": 180.0,
+    "shoulder_swing_max_speed_deg_s": 120.0,
+    "motion_start_threshold_m": 0.003
+  },
+  "auxiliary_controls": {
+    "home_enabled": true,
+    "home_button_hold_s": 1.0,
+    "home_speed_percent": 10,
+    "home_timeout_s": 30.0,
+    "wrist_joint_control_enabled": true,
+    "wrist_trigger_threshold": 0.9,
+    "wrist_rotation_deadband_deg": 1.0,
+    "wrist_max_rotation_step_deg": 30.0,
+    "wrist_scale_factor": 1.5,
+    "wrist_max_speed_deg_s": 180.0,
+    "wrist_max_target_lag_deg": 15.0,
+    "j5_controller_axis": 0,
+    "j5_controller_sign": 1.0,
+    "j6_controller_axis": 2,
+    "j6_controller_sign": 1.0
+  },
+  "gripper": {
+    "enabled": true,
+    "required": false,
+    "protocol": "ag",
+    "device_id": 1,
+    "force_percent": 30,
+    "tool_voltage": 0,
+    "modbus_timeout_units": 2,
+    "initialization_timeout_s": 8.0,
+    "button_debounce_s": 0.3
+  },
+  "safety": {
+    "xr_stale_timeout_s": 0.2,
+    "max_xr_sample_step_m": 0.10,
+    "joint_lower_deg": [-177.96069117, -129.99839414, -134.98885653, -177.96069117, -127.99877143, -359.81749534],
+    "joint_upper_deg": [177.96069117, 129.99839414, 134.98885653, 177.96069117, 127.99877143, 359.81749534],
+    "joint_limit_margin_deg": 5.0,
+    "frame_position_tolerance_m": 0.001,
+    "frame_rotation_tolerance_deg": 0.5,
+    "collision_level": 4,
+    "enable_self_collision": true
+  }
+}

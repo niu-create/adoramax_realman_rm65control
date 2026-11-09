@@ -1,0 +1,15 @@
+# 单臂 RM65 XR 采集环境（Python 3.10）
+# 与实机 conda 环境 xr-rm65-collection 对齐；直接依赖，不含完整锁文件。
+
+lerobot==0.3.3
+numpy==2.2.6
+scipy==1.15.3
+robotic-arm==1.1.6
+av==17.1.0
+pillow==12.3.0
+
+# 相机预览需要 GUI 版 OpenCV；LeRobot 默认装 opencv-python-headless。
+# 若要本地预览窗口，请安装 opencv-python：
+# opencv-python==5.0.0.93
+
+# XR SDK 不在 PyPI：见 README 第 3.2 节（XRoboToolkit-PC-Service-Pybind）。
